@@ -4,13 +4,13 @@ var bodyParser = require('body-parser');
 var logger = require('morgan');
 
 var tasks = {
-	"1": { "id": '1', "text": "Read description of programming challenge" },
+  "1": { "id": '1', "text": "Read description of programming challenge" },
   "2": { "id": "2", "text": "Implement awesome web app" },
   "3": { "id": "3", "text": "Polish project" },
   "9": { "id": "9", "text": "Send solution to LogMeIn" }
 };
 
-app.use(logger('dev'));
+app.use(logger('dev')); 
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
@@ -25,7 +25,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/api/tasks', function(req, res) {
-	res.json(tasks);
+	res.json(tasks); 
 });
 
 app.post('/api/tasks', function(req, res) {
@@ -67,6 +67,6 @@ app.delete('/api/tasks/:id', function(req, res) {
 	res.status(204).send();
 });
 
-app.listen(3000, function () {
-	  console.log('To-Do app listening on port 3000!');
+app.listen(8080, function () {
+	  console.log('To-Do app listening on port 8080!');
 });
